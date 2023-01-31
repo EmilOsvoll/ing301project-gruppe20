@@ -94,7 +94,7 @@ class Floor(SmartHouse):
         En etasje har et entydig nummer og består av flere rom."""
 
     def __init__(self, floor_no: int):
-        super().__init__()
+        super().create_floor()
         self.floor_no = floor_no
         self.rooms = []
 
@@ -104,12 +104,37 @@ class Room(Floor):
         På et romm kan også registreres smarte enheter."""
 
     def __init__(self, area: float, name: str = None):
-        super().__init__()
+        super().create_room()
         self.area = area
         self.name = name
 
     def __repr__(self):
         return f"{self.name} ({self.area} m^2)"
+    
+class Component:
+    def __init__(self, id: int, type: str, manufacturer: str = None, component_name: str = None):
+        self.id = id
+        self.type = type
+        self.manufacturer = manufacturer
+        self.component_name = component_name
+    
+class Actuator(Component):
+    def __init__(self, id: int, type: str, modulating: bool):
+        super().__init__(id, type)
+        self.modulating = modulating    # Modulating actuator means that it can be set
+                                        # to a more precise state than on or off.
+        self.state = None               # This must be a boolean if the actuator is
+                                        # modulating. It should be set throuh a function,
+                                        # not directly upon initialization.
 
-
-
+class Sensor(Component):
+    def __init__(self, id: int, type: str):
+        super().__init__(id, type)
+        
+class Measurement(Sensor):
+    def __init__(self, id: int, type: str, date, time, value: float, unit: str):
+        super().__init__(id, type)
+        self.date = date
+        self.time = time
+        self.value = value
+        self.unit = unit
