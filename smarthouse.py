@@ -7,9 +7,12 @@ class SmartHouse:
     """Den sentrale klasse i et smart hus system.
         Den forvalter etasjer, rom og enheter.
         Også styres alle enheter sentralt herifra."""
-        
-    f = open('house.json')
-    house = json.load(f)
+
+    h = open('house.json')
+    house = json.load(h)
+    d = open('dev.json')
+    dev = json.load(d)
+
 
     def __init__(self):
         self.floors = []
@@ -50,18 +53,14 @@ class SmartHouse:
 
     def get_no_of_devices(self):
         """Gir tilbake antall registrerte enheter i huset."""
-        # Dict
-        # I Device: 
-        # I info om dev, if registered = bool: 
-            # def registered(self) -> int()
-                # foreach element of dev_list
-                # if reg == True -> +1 
-
-        return len(Device.registered())
+        
+        super()
+        return len(Device.)
 
     def get_no_of_sensors(self):
         """Git tilbake antall av registrerte sensorer i huset."""
-        return NotImplemented
+        sensor_num = len()
+        return len()
 
     def get_no_of_actuators(self):
         """Git tilbake antall av registrerte aktuatorer i huset."""
