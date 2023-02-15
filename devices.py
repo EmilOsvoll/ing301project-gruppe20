@@ -15,9 +15,11 @@ class Device:
         def __init__(self):
             self.sensors = [] 
 
-
-        def add_sensors(self, sensors): 
-
+        def add_sensors(self, devices):
+            for i in devices['dev_type']: 
+                if i == "sensor" or "aktuator & sensor": 
+                    print(i)
+                    self.sensors.append(i)
 
 
 
@@ -25,6 +27,11 @@ class Device:
 
         def __init__(self): 
             self.actuators = []
+
+        def add_actuators(self, devices):
+            for i in devices['dev_type']: 
+                if i == "actuator" or "aktuator & sensor": 
+                    self.actuators.append(i)
 
 
 
