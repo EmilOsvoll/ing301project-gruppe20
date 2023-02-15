@@ -13,6 +13,8 @@ class SmartHouse:
         """Legger til en etasje og gi den tilbake som objekt.
             Denne metoden ble kalt i initialiseringsfasen når
             strukturen av huset bygges opp-."""
+
+
         return NotImplemented
 
     def create_room(self, floor_no: int, area: float, name: str = None) -> Room:
@@ -22,8 +24,7 @@ class SmartHouse:
         return NotImplemented
 
     def get_no_of_rooms(self) -> int:
-        """Gir tilbake antall rom i huset som heltall"""
-        return NotImplemented
+        return len(Room.get_all_rooms())
 
     def get_all_devices(self) -> List[Device]:
         """Gir tilbake en liste med alle enheter som er registrert i huset."""
@@ -31,7 +32,8 @@ class SmartHouse:
 
     def get_all_rooms(self) -> List[Room]:
         """Gir tilbake en liste med alle rom i huset."""
-        return NotImplemented
+        rooms = create
+        return rooms
 
     def get_total_area(self) -> float:
         """Regner ut det totale arealet av huset."""
@@ -43,7 +45,14 @@ class SmartHouse:
 
     def get_no_of_devices(self):
         """Gir tilbake antall registrerte enheter i huset."""
-        return NotImplemented
+        # Dict
+        # I Device: 
+        # I info om dev, if registered = bool: 
+            # def registered(self) -> int()
+                # foreach element of dev_list
+                # if reg == True -> +1 
+
+        return len(Device.registered())
 
     def get_no_of_sensors(self):
         """Git tilbake antall av registrerte sensorer i huset."""
