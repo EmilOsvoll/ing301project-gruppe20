@@ -1,10 +1,15 @@
 from devices import Device
 from typing import List, Optional
+import json
+
 
 class SmartHouse:
     """Den sentrale klasse i et smart hus system.
         Den forvalter etasjer, rom og enheter.
         Også styres alle enheter sentralt herifra."""
+        
+    f = open('house.json')
+    house = json.load(f)
 
     def __init__(self):
         self.floors = []
