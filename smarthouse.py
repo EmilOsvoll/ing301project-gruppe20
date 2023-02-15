@@ -3,15 +3,13 @@ from typing import List, Optional
 import json
 
 
-class SmartHouse:
+class SmartHouse():
     """Den sentrale klasse i et smart hus system.
         Den forvalter etasjer, rom og enheter.
         Også styres alle enheter sentralt herifra."""
 
     h = open('house.json')
     house = json.load(h)
-    d = open('dev.json')
-    dev = json.load(d)
 
 
     def __init__(self):
@@ -22,25 +20,30 @@ class SmartHouse:
             Denne metoden ble kalt i initialiseringsfasen når
             strukturen av huset bygges opp-."""
 
-
         return NotImplemented
+
+
 
     def create_room(self, floor_no: int, area: float, name: str = None) -> Room:
-        """Legger til et rom i en etasje og gi den tilbake som objekt.
-            Denne metoden ble kalt i initialiseringsfasen når
-            strukturen av huset bygges opp-."""
-        return NotImplemented
+        self.floor = floor_no
+        self.area = area
+        self.name = name
+        return Room(floor_no, area, name)
+
 
     def get_no_of_rooms(self) -> int:
         return len(Room.get_all_rooms())
 
+
+
+
     def get_all_devices(self) -> List[Device]:
         """Gir tilbake en liste med alle enheter som er registrert i huset."""
+        super(Device).
         return NotImplemented
 
     def get_all_rooms(self) -> List[Room]:
         """Gir tilbake en liste med alle rom i huset."""
-        rooms = create
         return rooms
 
     def get_total_area(self) -> float:
@@ -49,17 +52,19 @@ class SmartHouse:
 
     def register_device(self, device: Device, room: Room):
         """Registrerer en enhet i et gitt rom."""
+        
+
+
         return NotImplemented
 
     def get_no_of_devices(self):
         """Gir tilbake antall registrerte enheter i huset."""
-        
-        super()
-        return len(Device.)
+
+
+        return len()
 
     def get_no_of_sensors(self):
         """Git tilbake antall av registrerte sensorer i huset."""
-        sensor_num = len()
         return len()
 
     def get_no_of_actuators(self):

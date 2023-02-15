@@ -2,62 +2,74 @@
     {
         "floor": 1,
         "room": "Bathroom",
-        "area": 3.6
+        "area": 3.6,
+        "devices": []
     },
     {
         "floor": 1,
         "room": "Guest Room 1",
-        "area": 8.0
+        "area": 8.0,
+        "devices": []
     },
     {
         "floor": 1,
         "room": "Entrance",
-        "area": 13.5
+        "area": 13.5,
+        "devices": []
     },
     {
         "floor": 1,
         "room": "LivingRoom/Kitchen",
-        "area": 39.75
+        "area": 39.75,
+        "devices": []
     },
     {
         "floor": 1,
         "room": "Garage",
-        "area": 19.0
+        "area": 19.0,
+        "devices": []
     },
 
     {
         "floor": 2,
         "room": "Bathroom 2",
-        "area": 9.25
+        "area": 9.25,
+        "devices": []
     },
     {
         "floor": 2,
         "room": "Guest Room 2",
-        "area": 8.0
+        "area": 8.0,
+        "devices": []
     },
     {
         "floor": 2,
         "room": "Gang",
-        "area": 10.0
+        "area": 10.0,
+        "devices": []
     },
     {
         "floor": 2,
         "room": "Office",
-        "area": 11.75
+        "area": 11.75,
+        "devices": []
     },
     {
         "floor": 2,
         "room": "Guest Room 3",
-        "area": 10.0
+        "area": 10.0,
+        "devices": []
     },
     {
         "floor": 2,
         "room": "Dressing Room",
-        "area": 4.0
+        "area": 4.0,
+        "devices": []
     },
     {
         "floor": 2,
         "room": "Master Bedroom",
-        "area": 17.0
+        "area": 17.0,
+        "devices": []
     }
 ]

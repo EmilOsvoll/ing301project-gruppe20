@@ -1,37 +1,36 @@
 import json 
 f = open('dev.json')
-
+devs = json.load(f)
 
 
 class Device:
 
     def __init__(self): 
-        self.devices = json.load(f)
+        self.devices = devs
 
 
 
-    class Sensor: 
-        
-        def __init__(self):
-            self.sensors = [] 
+class Sensor(Device): 
+    def __init__(self):
+        self.sensors = [] 
 
-        def add_sensors(self, devices):
-            for i in devices['dev_type']: 
-                if i == "sensor" or "aktuator & sensor": 
-                    print(i)
-                    self.sensors.append(i)
-
+    def add_sensors(self, devices):
+        for i in devices['dev_type']: 
+            if i == "sensor" or "aktuator & sensor": 
+                print(i)
+                self.sensors.append(i)
 
 
-    class Actuator: 
 
-        def __init__(self): 
-            self.actuators = []
+class Actuator(Device): 
 
-        def add_actuators(self, devices):
-            for i in devices['dev_type']: 
-                if i == "actuator" or "aktuator & sensor": 
-                    self.actuators.append(i)
+    def __init__(self): 
+        self.actuators = []
+
+    def add_actuators(self, devices):
+        for i in devices['dev_type']: 
+            if i == "actuator" or "aktuator & sensor": 
+                self.actuators.append(i)
 
 
 
