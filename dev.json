@@ -1,0 +1,222 @@
+[
+    {
+        "id": "1",
+        "type": "Smart Lys",
+        "producent": "Fritsch Group",
+        "product_name": "Tresom Bright 1.0",
+        "serial_num": "f11bb4fc-ba74-49cd"
+    },
+    {
+        "id": "2",
+        "type": "Smart Lys",
+        "producent": "Fritsch Group",
+        "product_name": "Alphazap 2",
+        "serial_num": "480dbae8-cce7-46d7"
+    },
+    {
+        "id": "3",
+        "type": "Fuktighetssensor",
+        "producent": "Bernhard-Roberts",
+        "product_name": "Andalax",
+        "serial_num": "4cb686fe-6448-4cf6"
+    },
+    {
+        "id": "4",
+        "type": "Smart Lys",
+        "producent": "Fritsch Group",
+        "product_name": "Alphazap 2",
+        "serial_num": "6a36c71d-4f48-4eb4"
+    },
+    {
+        "id": "5",
+        "type": "Smart Lys",
+        "producent": "Larkin-Nitzsche",
+        "product_name": "Quo Lux",
+        "serial_num": "d01130c9-a368-42c6"
+    },
+    {
+        "id": "6",
+        "type": "Billader",
+        "producent": "Jast, Hansen and Halvorson",
+        "product_name": "Charge It 9000",
+        "serial_num": "0cae4f01-4ad9-47aa"
+    },
+    {
+        "id": "7",
+        "type": "Paneloven",
+        "producent": "Hauck-DuBuque",
+        "product_name": "Voyatouch 42",
+        "serial_num": "d16d84de-79f1-4f9a"
+    },
+    {
+        "id": "8",
+        "type": "Temperatursensor",
+        "producent": "Moen Inc",
+        "product_name": "Prodder Ute 1.2",
+        "serial_num": "e237beec-2675-4cb0"
+    },
+    {
+        "id": "9",
+        "type": "Smart Lys",
+        "producent": "Fritsch Group",
+        "product_name": "Alphazap 2",
+        "serial_num": "f4db4e54-cebe-428d"
+    },
+    {
+        "id": "10",
+        "type": "Smart Lys",
+        "producent": "Larkin-Nitzsche",
+        "product_name": "Quo Vadis Lux",
+        "serial_num": "8d09aa92-fc58-4c6"
+    },
+    {
+        "id": "11",
+        "type": "Strømmåler",
+        "producent": "Kilback LLC",
+        "product_name": "Transcof Current",
+        "serial_num": "c8bb5601-e850-4a80"
+    },
+    {
+        "id": "12",
+        "type": "Temperatursensor",
+        "producent": "Moen Inc",
+        "product_name": "Prodder Inne 2.3",
+        "serial_num": "d16d84de-79f1-4f9a"
+    },
+    {
+        "id": "13",
+        "type": "Smart Lys",
+        "producent": "Fritsch Group",
+        "product_name": "Alphazap 2",
+        "serial_num": "390ae474-21fb-4e06"
+    },
+    {
+        "id": "14",
+        "type": "Strømmåler",
+        "producent": "Ward-Schaefer",
+        "product_name": "Zaam-Dox NetConnect",
+        "serial_num": "3b06cf0f-8494-458b"
+    },
+    {
+        "id": "15",
+        "type": "Smart Stikkontakt",
+        "producent": "Kilback LLC",
+        "product_name": "Konklab 3",
+        "serial_num": "c28b6e75-d565-4678"
+    },
+    {
+        "id": "16",
+        "type": "Varmepumpe",
+        "producent": "Osinski Inc",
+        "product_name": "Fintone XCX4AB",
+        "serial_num": "4eca6387-0767-4e4e"
+    },
+    {
+        "id": "17",
+        "type": "Luftkvalitetssensor",
+        "producent": "Hauck-DuBuque",
+        "product_name": "Sonair Pro",
+        "serial_num": "c76688cc-3692-4aa3"
+    },
+    {
+        "id": "18",
+        "type": "Smart Stikkontakt",
+        "producent": "Kilback LLC",
+        "product_name": "Konklab 3",
+        "serial_num": "4b9050f3-0ef0-4914"
+    },
+    {
+        "id": "19",
+        "type": "Paneloven",
+        "producent": "Hauck-DuBuque",
+        "product_name": "Voyatouch 42",
+        "serial_num": "66373954-2ddd-4807"
+    },
+    {
+        "id": "20",
+        "type": "Smart Stikkontakt",
+        "producent": "Kilback LLC",
+        "product_name": "Konklab 3",
+        "serial_num": "1b34f6ce-94cb-4f7b"
+    },
+    {
+        "id": "21",
+        "type": "Fuktighetssensor",
+        "producent": "Bernhard-Roberts",
+        "product_name": "Namfix Y",
+        "serial_num": "8ceb53b2-e88f-4e8c"
+    },
+    {
+        "id": "22",
+        "type": "Luftavfukter",
+        "producent": "Steuber-Gerlach",
+        "product_name": "Aerified 42",
+        "serial_num": "ae902f8f-10b4-4738"
+    },
+    {
+        "id": "23",
+        "type": "Gulvvarmepanel",
+        "producent": "Steuber-Gerlach",
+        "product_name": "Temp Opp Pro 13",
+        "serial_num": "42f204bf-9944-47a1"
+    },
+
+
+
+    {
+        "id": "24",
+        "type": "Paneloven",
+        "producent": "Hauck-DuBuque",
+        "product_name": "Otcom 2",
+        "serial_num": "73902f8f-10b4-4738"
+    },
+    {
+        "id": "25",
+        "type": "Smart Lys",
+        "producent": "Fritsch Group",
+        "product_name": "Alphazap 2",
+        "serial_num": "627ff5f3-f4f5-47bd"
+    },
+    {
+        "id": "26",
+        "type": "Smart Lys",
+        "producent": "Fritsch Group",
+        "product_name": "Alphazap 2",
+        "serial_num": "ebaaadce-2d6b-4623"
+    },
+    {
+        "id": "27",
+        "type": "Varmepumpe",
+        "producent": "Osinski Inc",
+        "product_name": "Fintone XCX2FF",
+        "serial_num": "eed2cba8-eb13-4023"
+    },
+    {
+        "id": "28",
+        "type": "Temperatursensor",
+        "producent": "Moen Inc",
+        "product_name": "Prodder Inne 2.3",
+        "serial_num": "481e94bd-ff50-40ea"
+    },
+    {
+        "id": "29",
+        "type": "Smart Lys",
+        "producent": "Fritsch Group",
+        "product_name": "Tresom Bright 1.0",
+        "serial_num": "233064d7-028a-407f"
+    },
+    {
+        "id": "30",
+        "type": "Smart Lys",
+        "producent": "Fritsch Group",
+        "product_name": "Alphazap 2",
+        "serial_num": "89393440-43cb-4cb5"
+    },
+    {
+        "id": "31",
+        "type": "Paneloven",
+        "producent": "Hauck-DuBuque",
+        "product_name": "Otcom 2",
+        "serial_num": "be490f21-b9cf-4413"
+    }
+]
