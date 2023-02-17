@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - 'handin[0-9]+'
+on:
   workflow_dispatch:
       - 'handin[0-9]+'
 
