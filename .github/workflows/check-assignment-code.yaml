@@ -2,7 +2,6 @@ name: Check assignment code
 
 on:
   workflow_dispatch:
-      - 'handin[0-9]+'
 
 jobs:
   build:
