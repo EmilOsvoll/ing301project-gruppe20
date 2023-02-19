@@ -82,11 +82,11 @@ class SmartHouse:
         room.devices.append(device)
         return 
 
-    def get_no_of_devices(self):
+    def get_no_of_devices(self) -> int:
         """Gir tilbake antall registrerte enheter i huset."""
         return len(self.get_all_devices())
 
-    def get_no_of_sensors(self):
+    def get_no_of_sensors(self) -> int:
         """Git tilbake antall av registrerte sensorer i huset."""
         count = 0
         for device in self.get_all_devices():
@@ -94,7 +94,7 @@ class SmartHouse:
                         count += 1
         return count
 
-    def get_no_of_actuators(self):
+    def get_no_of_actuators(self) -> int:
         """Git tilbake antall av registrerte aktuatorer i huset."""
 
         count = 0
