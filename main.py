@@ -1,6 +1,11 @@
 from smarthouse import SmartHouse
 from devices import *
+from persistence import SmartHousePersistence
 
+def load_demo_house(persistence: SmartHousePersistence) -> SmartHouse:
+    result = SmartHouse()
+    # TODO read rooms, devices and their locations from the database
+    return result
 
 def build_demo_house() -> SmartHouse:
     house = SmartHouse()
@@ -26,32 +31,32 @@ def build_demo_house() -> SmartHouse:
     devices = [
         Actuator    (1,	    "Smart Lys"	            ,"Fritsch Group"	            ,"Tresom Bright 1.0"	,"f11bb4fc-ba74-49cd"),
         Actuator    (2,	    "Smart Lys"	            ,"Fritsch Group"	            ,"Alphazap 2"	        ,"480dbae8-cce7-46d7"),
-        Sensor      (3,	    "Fuktighetssensor"	    ,"Bernhard-Roberts"	            ,"Andalax"	            ,"4cb686fe-6448-4cf6"),
+        Sensor      (3,	    "Fuktighetssensor"	    ,"Bernhard-Roberts"	            ,"Andalax"	            ,"4cb686fe-6448-4cf6", '%'),
         Actuator    (4,	    "Smart Lys"	            ,"Fritsch Group"	            ,"Alphazap 2"	        ,"6a36c71d-4f48-4eb4"),
         Actuator    (5,	    "Smart Lys"	            ,"Larkin-Nitzsche"	            ,"Quo Lux"	            ,"d01130c9-a368-42c6"),
         Actuator    (6,	    "Billader"	            ,"Jast, Hansen and Halvorson"	,"Charge It 9000"	    ,"0cae4f01-4ad9-47aa"),
         Actuator    (7,	    "Paneloven"	            ,"Hauck-DuBuque"	            ,"Voyatouch 42"	        ,"d16d84de-79f1-4f9a"),
-        Sensor      (8,	    "Temperatursensor"	    ,"Moen Inc"	                    ,"Prodder Ute 1.2"	    ,"e237beec-2675-4cb0"),
+        Sensor      (8,	    "Temperatursensor"	    ,"Moen Inc"	                    ,"Prodder Ute 1.2"	    ,"e237beec-2675-4cb0", '°C'),
         Actuator    (9,	    "Smart Lys"	            ,"Fritsch Group"	            ,"Alphazap 2"	        ,"f4db4e54-cebe-428d"),
         Actuator    (10,	"Smart Lys"	            ,"Larkin-Nitzsche"	            ,"Quo Vadis Lux"	    ,"8d09aa92-fc58-4c6)"),
-        Sensor      (11,	"Strømmåler"	        ,"Kilback LLC"	                ,"Transcof Current"	    ,"c8bb5601-e850-4a80"),
-        Sensor      (12,	"Temperatursensor"	    ,"Moen Inc"	                    ,"Prodder Inne 2.3"	    ,"d16d84de-79f1-4f9a"),
+        Sensor      (11,	"Strømmåler"	        ,"Kilback LLC"	                ,"Transcof Current"	    ,"c8bb5601-e850-4a80", 'kWh'),
+        Sensor      (12,	"Temperatursensor"	    ,"Moen Inc"	                    ,"Prodder Inne 2.3"	    ,"d16d84de-79f1-4f9a", '°C'),
         Actuator    (13,	"Smart Lys"	            ,"Fritsch Group"	            ,"Alphazap 2"	        ,"390ae474-21fb-4e06"),
-        Sensor      (14,	"Strømmåler"	        ,"Ward-Schaefer"	            ,"Zaam-Dox NetConnect"	,"3b06cf0f-8494-458b"),
+        Sensor      (14,	"Strømmåler"	        ,"Ward-Schaefer"	            ,"Zaam-Dox NetConnect"	,"3b06cf0f-8494-458b", 'kWh'),
         Actuator    (15,	"Smart Stikkontakt"	    ,"Kilback LLC"	                ,"Konklab 3"	        ,"c28b6e75-d565-4678"),
         Actuator    (16,	"Varmepumpe"	        ,"Osinski Inc"	                ,"Fintone XCX4AB"	    ,"4eca6387-0767-4e4e"),
-        Sensor      (17,	"Luftkvalitetssensor"	,"Hauck-DuBuque"	            ,"Sonair Pro"	        ,"c76688cc-3692-4aa3"),
+        Sensor      (17,	"Luftkvalitetssensor"	,"Hauck-DuBuque"	            ,"Sonair Pro"	        ,"c76688cc-3692-4aa3", 'g/m^2'),
         Actuator    (18,	"Smart Stikkontakt"	    ,"Kilback LLC"	                ,"Konklab 3"	        ,"4b9050f3-0ef0-4914"),
         Actuator    (19,	"Paneloven"	            ,"Hauck-DuBuque"	            ,"Voyatouch 42"	        ,"66373954-2ddd-4807"),
         Actuator    (20,	"Smart Stikkontakt"	    ,"Kilback LLC"	                ,"Konklab 3"	        ,"1b34f6ce-94cb-4f7b"),
-        Sensor      (21,	"Fuktighetssensor"	    ,"Bernhard-Roberts"	            ,"Namfix Y"	            ,"8ceb53b2-e88f-4e8c"),
+        Sensor      (21,	"Fuktighetssensor"	    ,"Bernhard-Roberts"	            ,"Namfix Y"	            ,"8ceb53b2-e88f-4e8c", '%'),
         Actuator    (22,	"Luftavfukter"	        ,"Steuber-Gerlach"	            ,"Aerified 42"	        ,"ae902f8f-10b4-4738"),
         Actuator    (23,	"Gulvvarmepanel"	    ,"Steuber-Gerlach"	            ,"Temp Opp Pro 13"	    ,"42f204bf-9944-47a1"),
         Actuator    (24,	"Paneloven"	            ,"Hauck-DuBuque"	            ,"Otcom 2"	            ,"73902f8f-10b4-4738"),
         Actuator    (25,	"Smart Lys"	            ,"Fritsch Group"	            ,"Alphazap 2"	        ,"627ff5f3-f4f5-47bd"),
         Actuator    (26,	"Smart Lys"	            ,"Fritsch Group"	            ,"Alphazap 2"	        ,"ebaaadce-2d6b-4623"),
         Actuator    (27,	"Varmepumpe"	        ,"Osinski Inc"	                ,"Fintone XCX2FF"	    ,"eed2cba8-eb13-4023"),
-        Sensor      (28,	"Temperatursensor"	    ,"Moen Inc"	                    ,"Prodder Inne 2.3"	    ,"481e94bd-ff50-40ea"),
+        Sensor      (28,	"Temperatursensor"	    ,"Moen Inc"	                    ,"Prodder Inne 2.3"	    ,"481e94bd-ff50-40ea", '°C'),
         Actuator    (29,	"Smart Lys"	            ,"Fritsch Group"	            ,"Tresom Bright 1.0"	,"233064d7-028a-407f"),
         Actuator    (30,	"Smart Lys"	            ,"Fritsch Group"	            ,"Alphazap 2"	        ,"89393440-43cb-4cb5"),
         Actuator    (31,	"Paneloven"	            ,"Hauck-DuBuque"	            ,"Otcom 2"	            ,"be490f21-b9cf-4413"),
@@ -100,14 +105,14 @@ def build_demo_house() -> SmartHouse:
     house.register_device(devices[30], guest_room_3)
 
     #Set refrence values
-    devices[2].measurements.append(Measurement(date.today, time.second, 68, '%'))
-    devices[7].measurements.append(Measurement(date.today, time.second, 1.3, '°C'))
-    devices[10].measurements.append(Measurement(date.today, time.second, 0, 'kWh'))
-    devices[11].measurements.append(Measurement(date.today, time.second, 18.1, '°C'))
-    devices[13].measurements.append(Measurement(date.today, time.second, 1.5, 'kWh'))
-    devices[16].measurements.append(Measurement(date.today, time.second, 0.08, 'g/m^2'))
-    devices[20].measurements.append(Measurement(date.today, time.second, 52, '%'))
-    devices[27].measurements.append(Measurement(date.today, time.second, 16.1, '°C'))
+    devices[2].measurements.append(Measurement(date.today, time.second, 68))
+    devices[7].measurements.append(Measurement(date.today, time.second, 1.3))
+    devices[10].measurements.append(Measurement(date.today, time.second, 0))
+    devices[11].measurements.append(Measurement(date.today, time.second, 18.1))
+    devices[13].measurements.append(Measurement(date.today, time.second, 1.5))
+    devices[16].measurements.append(Measurement(date.today, time.second, 0.08))
+    devices[20].measurements.append(Measurement(date.today, time.second, 52))
+    devices[27].measurements.append(Measurement(date.today, time.second, 16.1))
     #Set values
     return house
 
