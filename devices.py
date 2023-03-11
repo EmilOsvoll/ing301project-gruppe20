@@ -1,9 +1,27 @@
+<<<<<<< Updated upstream
 import json 
 f = open('dev.json')
 devs = json.load(f)
 
 
 class Device:
+=======
+from typing import List, Optional
+from datetime import time, date
+import database
+
+
+
+class Device:
+
+    def __init__(self, Nr: int, Type: str, Producer: str, Name: str, Serial_no: str):
+        self.Nr = Nr
+        self.Type = Type
+        self.Produer = Producer
+        self.Name = Name
+        self.serial_no = Serial_no
+        self.state = False    
+>>>>>>> Stashed changes
 
     def __init__(self): 
         self.devices = devs
