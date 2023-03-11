@@ -1,5 +1,6 @@
 from smarthouse import SmartHouse
 from devices import *
+from persistence import SmartHousePersistence
 
 
 def build_demo_house() -> SmartHouse:
