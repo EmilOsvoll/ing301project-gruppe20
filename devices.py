@@ -25,8 +25,8 @@ class Sensor(Device):
         super().__init__(Nr, Type, Producer, Name, Serial_no)
     
     def __repr__(self) -> str:
-        last = self.measurements[-1] if len(self.measurements) > 0 else 0
-        s = f"{last.value} {self.unit}"
+        last = self.measurements[-1].value if len(self.measurements) > 0 else 0
+        s = f"{last} {self.unit}"
         return f"Sensor({self.serial_no}) TYPE: {self.Type} STATUS: {s} PRODUCT DETAILS: {self.Produer} {self.Name}"
 
     def getLast(self) -> float:

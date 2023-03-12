@@ -1,6 +1,6 @@
 from devices import *
 from typing import List, Optional
-
+from persistence import SmartHousePersistence
 
 class Room:
     """Representerer et rom i en etasje i ett hus.
@@ -30,8 +30,9 @@ class SmartHouse:
         Den forvalter etasjer, rom og enheter.
         Også styres alle enheter sentralt herifra."""
 
-    def __init__(self):
+    def __init__(self, p: SmartHousePersistence):
         self.floors: list[Floor] = []
+        self.persistence = p
 
     def create_floor(self) -> Floor:
         """Legger til en etasje og gi den tilbake som objekt.
@@ -79,6 +80,9 @@ class SmartHouse:
 
     def register_device(self, device: Device, room: Room):
         """Registrerer en enhet i et gitt rom."""
+        if device is None:
+            return
+        
         room.devices.append(device)
         return 
 
@@ -105,12 +109,13 @@ class SmartHouse:
 
     def move_device(self, device: Device, from_room: Room, to_room: Room):
         """Flytter en enhet fra et gitt romm til et annet."""
+        if device is None or from_room is None or to_room is None:
+            return
         if device not in from_room.devices:
             return
         
         to_room.devices.append(device)
         from_room.devices.remove(device)
-
         return
 
     def find_device_by_serial_no(self, serial_no: str) -> Optional[Device]:
@@ -124,6 +129,9 @@ class SmartHouse:
 
     def get_room_with_device(self, device: Device) -> Optional[Room]:
         """Gir tilbake rommet der en gitt enhet er regitrert."""
+        if device is None:
+            return
+        
         for room in self.get_all_rooms():
             if device in room.devices:
                 return room
@@ -131,25 +139,47 @@ class SmartHouse:
 
     def get_all_devices_in_room(self, room: Room) -> List[Device]:
         """Gir tilbake en liste med alle enheter som er registrert på rommet."""
+        if room is None:
+            return []
+        
         return room.devices
 
     def turn_on_lights_in_room(self, room: Room):
         """Slår på alle enheter av type 'Smart Lys' i et gitt rom."""
+        if room is None:
+            return
+        
         for device in room.devices:
             if device.Type == "Smart Lys":
                 device.On()
+                cmd = f"""UPDATE devices 
+                        Set state = "On"
+                        WHERE id = {device.Nr};"""
+                self.persistence.cursor.execute(cmd)
+                self.persistence.connection.commit()
+
         return
 
     def turn_off_lights_in_room(self, room: Room):
         """Slår av alle enheter av type 'Smart Lys' i et gitt rom."""
+        if room is None:
+            return
+        
         for device in room.devices:
             if device.Type == "Smart Lys":
                 device.Off()
+                cmd = f"""UPDATE devices 
+                        Set state = "Off"
+                        WHERE id = {device.Nr};"""
+                self.persistence.cursor.execute(cmd)
+                self.persistence.connection.commit()
         return 
 
     def get_temperature_in_room(self, room: Room) -> Optional[float]:
         """Prøver å finne ut temperaturen i et gitt rom ved å finne
         enheter av type 'Temperatursensor' der og gi tilake verdien som kommatall."""
+        if room is None:
+            return
         for device in room.devices:
             if device.Type == "Temperatursensor":
                 return device.getLast()
@@ -159,9 +189,18 @@ class SmartHouse:
         """Prøver å sette temperaturen i et gitt rom ved å sette alle aktuatorer
         som kan påvirke temperatur ('Paneloven', 'Varmepumpe', ...) til ønsket
         temperatur."""
+        if room is None:
+            return
         for device in room.devices:
             if device.Type == "Paneloven" or device.Type == "Varmepumpe" or device.Type == "Gulvvarmepanel":
                 device.value = temperature
                 device.On()
+                cmd = f"""UPDATE devices Set state = "On" WHERE id = {device.Nr};"""
+                self.persistence.cursor.execute(cmd)
+                self.persistence.connection.commit()
+                #cmd = f"""UPDATE Actuator Set Value  = {temperature} WHERE id = {device.Nr};"""
+                cmd = f"""INSERT into Actuator (Device, Value) values ({device.Nr}, {temperature});"""
+                self.persistence.cursor.execute(cmd)
+                self.persistence.connection.commit()
 
         return 

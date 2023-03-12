@@ -1,9 +1,10 @@
 import unittest
 import main
+from persistence import SmartHousePersistence
 
 
 class SmartHouseTest(unittest.TestCase):
-    house = main.build_demo_house()
+    house = main.load_demo_house(SmartHousePersistence('db.sqlite'))
 
     def test_no_of_rooms(self):
         self.assertEqual(12, SmartHouseTest.house.get_no_of_rooms())  # add assertion here
